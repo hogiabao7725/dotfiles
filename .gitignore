@@ -1,0 +1,38 @@
+# ==========================================================
+# .gitignore for Home Directory Dotfiles
+# ==========================================================
+
+# 1. Safety Net: Ignore everything by default.
+*
+
+# 2. Exceptions: Whitelist essential root files and directories.
+!/.gitignore
+!/.gitmodules
+!/.config/
+!/.dotfiles/
+
+# ==========================================================
+# TRACKED CONFIGURATIONS
+# ==========================================================
+
+# Zsh
+# Whitelist the entire zsh config directory...
+!/.config/zsh/
+!/.config/zsh/**
+# ...but then explicitly ignore the plugins directory,
+# as it will be managed by a script.
+/.config/zsh/plugins/
+
+# WezTerm
+!/.config/wezterm/
+!/.config/wezterm/**
+
+# ==========================================================
+# IGNORE CACHE & COMPILED FILES
+# ==========================================================
+
+# Ignore Zsh auto-generated files
+.zcompdump*
+
+# Ignore compiled files (.zwc)
+/.config/zsh/**/*.zwc
