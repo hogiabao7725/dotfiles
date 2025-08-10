@@ -1,65 +1,57 @@
-# ==============================================================================
-#                             My Zsh Conductor
-# ==============================================================================
-
-# zmodload zsh/zprof
 
 # ------------------------------------------------------------------------------
-# 1. Performance First: Instant Prompt
-#    Must be at the absolute top to work correctly.
+# 1) Instant prompt (must be at the absolute top)
 # ------------------------------------------------------------------------------
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# ------------------------------------------------------------------------------
+# 2) Optional profiler (keep as-is; enables zprof when needed)
+# ------------------------------------------------------------------------------
+ zmodload zsh/zprof
 
 # ------------------------------------------------------------------------------
-# 2. Declarations: Define core paths
-#    Centralize path definitions for easy maintenance.
+# 3) Paths to plugins and personal library
 # ------------------------------------------------------------------------------
 export ZSH_PLUGINS_DIR="$HOME/.config/zsh/plugins"
 export ZSH_LIB_DIR="$HOME/.config/zsh/lib"
 
+# ------------------------------------------------------------------------------
+# 4) Completion: initialize early (before themes/plugins)
+# ------------------------------------------------------------------------------
+autoload -Uz compinit
+compinit -i -C
 
 # ------------------------------------------------------------------------------
-# 3. Core Activation: Load essential plugins
-#    Source a few fundamental plugins directly for clarity.
-# ------------------------------------------------------------------------------
-if [ -d "$ZSH_PLUGINS_DIR" ]; then
-  source "$ZSH_PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme"
-  source "$ZSH_PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-  # Add other core plugins here if needed.
-fi
-
-
-# ------------------------------------------------------------------------------
-# 4. Personalization: Load custom configurations from lib/
-#    Automatically sources all *.zsh files from your library directory.
+# 5) Personal library: source all *.zsh from lib/
 # ------------------------------------------------------------------------------
 if [ -d "$ZSH_LIB_DIR" ]; then
-  # Use Zsh's glob qualifiers (N.) for safety:
-  # N = No error if no files match.
-  # . = Regular files only.
+  # N: no error if no match, .: regular files only
   for lib_file in "$ZSH_LIB_DIR"/*.zsh(N.); do
     source "$lib_file"
   done
   unset lib_file
 fi
 
-
 # ------------------------------------------------------------------------------
-# 5. Finalization: Run post-setup commands
-#    Initialize components that need to run after everything else is loaded.
+# 6) Theme (Powerlevel10k) — load before syntax highlighting
 # ------------------------------------------------------------------------------
-# Initialize the completion system.
-autoload -Uz compinit
-compinit -i -C
+if [ -d "$ZSH_PLUGINS_DIR" ]; then
+  source "$ZSH_PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme"
+fi
 
-# Load the Powerlevel10k user configuration file.
-# This must be last to apply all personal theme settings.
+# Load user Powerlevel10k configuration, if present
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# ------------------------------------------------------------------------------
+# 7) Syntax highlighting — load last
+# ------------------------------------------------------------------------------
+if [ -d "$ZSH_PLUGINS_DIR" ]; then
+  source "$ZSH_PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+fi
 
-# --- Cleanup ---
-# Unset temporary variables to keep the interactive session clean.
+# ------------------------------------------------------------------------------
+# 8) Cleanup
+# ------------------------------------------------------------------------------
 unset ZSH_PLUGINS_DIR ZSH_LIB_DIR

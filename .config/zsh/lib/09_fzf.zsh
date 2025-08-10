@@ -1,5 +1,5 @@
 #
-# 08_fzf.zsh - Lightweight FZF Integration (no plugin manager)
+# 09_fzf.zsh - Lightweight FZF Integration (no plugin manager)
 #
 
 # Add FZF binary to PATH (required)
