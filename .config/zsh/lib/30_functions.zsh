@@ -19,7 +19,16 @@ sdk() {
   sdk "$@" # Call the real sdk with all arguments.
 }
 
-
+# Lazyload goenv
+goenv() {
+  unfunction goenv 2>/dev/null
+  [ -s "$GOENV_ROOT/bin/goenv" ] || { echo "goenv not found in $GOENV_ROOT/bin"; return 1; }
+  eval "$("$GOENV_ROOT/bin/goenv" init -)"
+  if [ $# -eq 0 ]; then
+    return 0
+  fi
+  command goenv "$@"
+}
 # --- Custom Utility Functions ---
 
 # Creates a new directory and changes into it.
