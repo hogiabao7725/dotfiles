@@ -19,16 +19,17 @@ M.window_background_opacity = 0.9
 M.default_cursor_style = "BlinkingBar"
 M.cursor_blink_rate = 500
 
--- M.window_frame = {
---   border_left_width = '1.5px',
---   border_right_width = '1.5px',
---   border_bottom_height = '1.5px',
---   border_top_height = '1.5px',
---
---   border_left_color = '#5c7aff',
---   border_right_color = '#5c7aff',
---   border_bottom_color = '#5c7aff',
---   border_top_color = '#5c7aff',
--- }
+M.window_frame = {
+  border_left_width = '2px',
+  border_right_width = '2px',
+  border_bottom_height = '2px',
+  border_top_height = '2px',
+
+  border_left_color = '#7aa2f7',
+  border_right_color = '#7aa2f7',
+  border_bottom_color = '#7aa2f7',
+  border_top_color = '#7aa2f7',
+}
+
 
 return M
