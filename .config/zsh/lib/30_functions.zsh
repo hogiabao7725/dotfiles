@@ -61,16 +61,63 @@ extract() {
   fi
 }
 
-# --- Dynamic Terminal Title ---
-# This function is automatically called by Zsh every time the directory changes.
-# It updates the terminal title to show the current working directory.
-chpwd() {
-  # %1~: Shows '~' for the home directory, or just the current directory's name otherwise.
-  # \e]0;...\a: The standard terminal escape code to set the window and tab title.
-  # print -Pn: Prints without a newline (-n) and processes prompt escapes like %1~ (-P).
-  print -Pn "\e]0;%1~\a"
+# --- Smart Dynamic Tab Title for WezTerm & Zsh ---
+
+# Core function to set the terminal title.
+# Uses `print -Pn` which is a fast, built-in Zsh command.
+set_terminal_title() {
+  print -Pn "\e]0;$1\a"
 }
 
-# Call chpwd once when Zsh starts to set the initial title correctly.
-# Add this line at the VERY END of the file, after the function definition.
-chpwd
+# Displays the current directory in the title when the shell is idle.
+# Called by the `precmd` hook (before the prompt is drawn).
+# `%1~` shows only the trailing directory name for brevity.
+# Note: Use `%~` for the full path from the home directory.
+set_title_to_directory() {
+  set_terminal_title "%1~"
+}
+
+# Displays the running command in the title just before execution.
+# Called by the `preexec` hook.
+set_title_to_command() {
+  # Split the command string from the hook's first argument ($1) into an array.
+  # The Zsh-native '(z)' flag correctly handles quotes and is very fast.
+  local -a words=("${(z)1}")
+  (( ${#words[@]} )) || return # Exit if the command is empty.
+
+  # Strip leading environment variable assignments (e.g., "LANG=C git status").
+  while [[ ${words[1]} == [A-Za-z_]*=* ]]; do
+    shift words
+    (( ${#words[@]} )) || return # Exit if only variables were present.
+  done
+
+  # Get the base name of the command, stripping the path (e.g., /bin/ls -> ls).
+  # The `:t` modifier (tail) is a powerful Zsh parameter expansion feature.
+  local cmd=${words[1]:t}
+
+  # For specific commands, include the subcommand for more context.
+  case $cmd in
+    sudo|ssh|git|docker|npm|yarn)
+      # Show "git status" or "sudo vim" instead of just "git" or "sudo".
+      # Also apply `:t` to the subcommand for consistency.
+      set_terminal_title "$cmd ${words[2]:t}"
+      ;;
+    *)
+      # Default to showing just the command name.
+      set_terminal_title "$cmd"
+      ;;
+  esac
+}
+
+# Autoload the `add-zsh-hook` function to ensure it's available.
+# This is a robust way to make the script work even in minimal Zsh setups.
+autoload -Uz add-zsh-hook
+
+# Register the functions with Zsh's hooks.
+# This method is safe and won't override existing hooks from other plugins.
+add-zsh-hook precmd  set_title_to_directory
+add-zsh-hook preexec set_title_to_command
+add-zsh-hook chpwd   set_title_to_directory # Updates title immediately on `cd`.
+
+# Set the initial title when the shell starts up.
+set_title_to_directory
