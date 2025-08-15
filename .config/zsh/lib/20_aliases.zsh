@@ -10,6 +10,11 @@ if type eza &>/dev/null; then
   alias ll='eza --icons -laF --git' # List all files, long format, with git status
   alias la='eza --icons -aF' # List all files including hidden
   alias l='eza --icons -CF'  # List files in columns
+
+  # --- New eza tree aliases ---
+  alias tree='eza -T --icons' # Display a directory tree with icons
+  alias tre='eza -T -a --icons' # Display a tree including hidden files
+
 else
   # Fallback to standard ls if eza is not found
   alias ls='ls --color=auto'
@@ -40,25 +45,6 @@ alias mkdir='mkdir -p' # Create parent directories as needed
 alias update='sudo apt update && sudo apt upgrade -y'
 alias install='sudo apt install'
 alias remove='sudo apt remove'
-
-# For Arch Linux
-# alias update='sudo pacman -Syu'
-# alias install='sudo pacman -S'
-# alias remove='sudo pacman -Rns'
-
-# For macOS (Homebrew)
-# alias update='brew update && brew upgrade'
-# alias install='brew install'
-# alias remove='brew uninstall'
-
-#
-# --- Zsh Performance ---
-# Compiles all .zsh config files into .zwc for faster loading.
-# Run this command every time you edit a .zsh file.
-# alias zshcompile='for f in ~/.config/zsh/{.zshrc,lib/*.zsh}; do zcompile "$f"; echo "Compiled: $f"; done' !!!Error
-# alias zshcompile="zcompile ~/.zshrc && zcompile ~/.config/zsh/lib/*.zsh"
-# ==> convert to 99_zsh_compile.zsh
-
 
 # --- Dotfiles Management ---
 # Alias to quickly navigate to and edit dotfiles
