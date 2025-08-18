@@ -54,6 +54,40 @@ M.keys = {
     { key = '8', mods = 'CTRL', action = wezterm.action.ActivateTab(7) },
     { key = '9', mods = 'CTRL', action = wezterm.action.ActivateTab(8) },
 
+    -- Split pane to the LEFT
+    {
+        key = 'LeftArrow',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.SplitPane { direction = 'Left' },
+        },
+
+    -- Split pane to the RIGHT
+    {
+        key = 'RightArrow',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.SplitPane { direction = 'Right' },
+    },
+
+    -- Split pane UP
+    {
+        key = 'UpArrow',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.SplitPane { direction = 'Up' },
+    },
+
+    -- Split pane DOWN
+    {
+        key = 'DownArrow',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.SplitPane { direction = 'Down' },
+    },
+
+    -- Close current pane (with confirmation)
+    {
+        key = 'q',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.CloseCurrentPane { confirm = true },
+    },
 
 }
 
