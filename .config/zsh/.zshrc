@@ -21,7 +21,12 @@ export ZSH_LIB_DIR="$HOME/.config/zsh/lib"
 # 4) Completion: initialize early (before themes/plugins)
 # ------------------------------------------------------------------------------
 autoload -Uz compinit
-compinit -i -C
+if [[ ! -f ~/.zcompdump || ~/.zcompdump -nt ~/.zcompdump.zwc ]]; then
+  compinit -i -d ~/.zcompdump
+  zcompile ~/.zcompdump
+else
+  compinit -C -d ~/.zcompdump
+fi
 
 # ------------------------------------------------------------------------------
 # 5) Personal library: source all *.zsh from lib/
@@ -55,3 +60,5 @@ fi
 # 8) Cleanup
 # ------------------------------------------------------------------------------
 unset ZSH_PLUGINS_DIR ZSH_LIB_DIR
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

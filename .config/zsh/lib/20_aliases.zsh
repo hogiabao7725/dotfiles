@@ -41,10 +41,13 @@ alias du='du -h'     # Disk-usage in human-readable format
 alias mkdir='mkdir -p' # Create parent directories as needed
 
 # --- System Package Manager (uncomment for your OS) ---
-# For Debian/Ubuntu
-alias update='sudo apt update && sudo apt upgrade -y'
-alias install='sudo apt install'
-alias remove='sudo apt remove'
+# For openSUSE
+alias update='sudo zypper refresh && sudo zypper update -y'
+alias install='sudo zypper install'
+alias remove='sudo zypper remove'
+alias dup='sudo zypper dup'      # distribution upgrade
+alias se='zypper search'         # search packages
+alias ifo='zypper info'          # package info
 
 # --- Dotfiles Management ---
 # Alias to quickly navigate to and edit dotfiles

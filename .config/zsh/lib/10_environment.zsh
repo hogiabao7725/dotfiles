@@ -21,11 +21,7 @@ export LESS='-R'
 # Paths for version managers.
 # The actual loading logic is handled in 30_functions.zsh.
 export NVM_DIR="$HOME/.nvm"
-export SDKMAN_DIR="$HOME/.sdkman"
-
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
 
 # Add personal scripts directory to the PATH if it exists.
 # This allows you to run your own scripts from anywhere.
-# [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
