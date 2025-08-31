@@ -60,5 +60,3 @@ fi
 # 8) Cleanup
 # ------------------------------------------------------------------------------
 unset ZSH_PLUGINS_DIR ZSH_LIB_DIR
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
