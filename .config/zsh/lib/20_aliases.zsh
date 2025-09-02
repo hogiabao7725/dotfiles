@@ -42,7 +42,7 @@ alias mkdir='mkdir -p' # Create parent directories as needed
 
 # --- System Package Manager (uncomment for your OS) ---
 # For openSUSE
-alias update='sudo zypper refresh && sudo zypper update -y'
+alias update='sudo zypper refresh && sudo zypper dup -y'
 alias install='sudo zypper install'
 alias remove='sudo zypper remove'
 alias dup='sudo zypper dup'      # distribution upgrade
