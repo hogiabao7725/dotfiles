@@ -1,5 +1,4 @@
 # ~/.config/zsh/lib/99_zsh_compile.zsh
-# High-performance Zsh compilation utilities (final optimized)
 
 # ---------------------------
 # Option parser (reusable, no globals)
