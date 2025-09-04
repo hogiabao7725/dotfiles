@@ -9,9 +9,6 @@ export LC_ALL=en_US.UTF-8
 
 # Set default text editor (uncomment your preferred one).
 export EDITOR='nvim'
-# export EDITOR='vim'
-# export EDITOR='code' # VS Code
-# export EDITOR='nano'
 export VISUAL="$EDITOR"
 
 # Use `less` as the default pager with options to support colors.
