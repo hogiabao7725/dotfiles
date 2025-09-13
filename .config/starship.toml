@@ -5,8 +5,6 @@ format = """
 $directory$git_branch$git_status
 $character"""
 
-right_format = "$time"
-
 add_newline = true
 
 [character]
