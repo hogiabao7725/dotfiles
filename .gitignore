@@ -27,6 +27,9 @@
 !/.config/wezterm/
 !/.config/wezterm/**
 
+# Starship
+!/.config/starship.toml
+
 # ==========================================================
 # IGNORE CACHE & COMPILED FILES
 # ==========================================================
