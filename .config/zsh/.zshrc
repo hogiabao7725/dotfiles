@@ -1,24 +1,17 @@
 
 # ------------------------------------------------------------------------------
-# 1) Instant prompt (must be at the absolute top)
+# Optional profiler (keep as-is; enables zprof when needed)
 # ------------------------------------------------------------------------------
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# zmodload zsh/zprof
 
 # ------------------------------------------------------------------------------
-# 2) Optional profiler (keep as-is; enables zprof when needed)
-# ------------------------------------------------------------------------------
-#zmodload zsh/zprof
-
-# ------------------------------------------------------------------------------
-# 3) Paths to plugins and personal library
+# Paths to plugins and personal library
 # ------------------------------------------------------------------------------
 export ZSH_PLUGINS_DIR="$HOME/.config/zsh/plugins"
 export ZSH_LIB_DIR="$HOME/.config/zsh/lib"
 
 # ------------------------------------------------------------------------------
-# 4) Completion: initialize early (before themes/plugins)
+# Completion: initialize early (before themes/plugins)
 # ------------------------------------------------------------------------------
 autoload -Uz compinit
 if [[ ! -f ~/.zcompdump || ~/.zcompdump -nt ~/.zcompdump.zwc ]]; then
@@ -29,7 +22,7 @@ else
 fi
 
 # ------------------------------------------------------------------------------
-# 5) Personal library: source all *.zsh from lib/
+# Personal library: source all *.zsh from lib/
 # ------------------------------------------------------------------------------
 if [ -d "$ZSH_LIB_DIR" ]; then
   # N: no error if no match, .: regular files only
@@ -40,23 +33,18 @@ if [ -d "$ZSH_LIB_DIR" ]; then
 fi
 
 # ------------------------------------------------------------------------------
-# 6) Theme (Powerlevel10k) — load before syntax highlighting
+# Theme (Starship) — load before syntax highlighting
 # ------------------------------------------------------------------------------
-if [ -d "$ZSH_PLUGINS_DIR" ]; then
-  source "$ZSH_PLUGINS_DIR/powerlevel10k/powerlevel10k.zsh-theme"
-fi
-
-# Load user Powerlevel10k configuration, if present
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(starship init zsh)"
 
 # ------------------------------------------------------------------------------
-# 7) Syntax highlighting — load last
+# Syntax highlighting — load last
 # ------------------------------------------------------------------------------
 if [ -d "$ZSH_PLUGINS_DIR" ]; then
   source "$ZSH_PLUGINS_DIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 fi
 
 # ------------------------------------------------------------------------------
-# 8) Cleanup
+# Cleanup
 # ------------------------------------------------------------------------------
 unset ZSH_PLUGINS_DIR ZSH_LIB_DIR
