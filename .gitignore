@@ -31,6 +31,24 @@
 !/.config/starship.toml
 
 # ==========================================================
+# KDE PLASMA CONFIGURATIONS
+# ==========================================================
+
+# Core visual and functional settings
+!/.config/kwinrc
+!/.config/plasmashellrc
+!/.config/kglobalshortcutsrc
+!/.config/kcminputrc
+
+# Widget and Panel layout
+!/.config/plasma-org.kde.plasma.desktop-appletsrc
+
+# Application specific configs
+!/.config/fcitx5/
+!/.config/fcitx5/**
+!/.config/spectaclerc
+
+# ==========================================================
 # IGNORE CACHE & COMPILED FILES
 # ==========================================================
 
