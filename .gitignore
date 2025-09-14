@@ -36,12 +36,8 @@
 
 # Core visual and functional settings
 !/.config/kwinrc
-!/.config/plasmashellrc
 !/.config/kglobalshortcutsrc
 !/.config/kcminputrc
-
-# Widget and Panel layout
-!/.config/plasma-org.kde.plasma.desktop-appletsrc
 
 # Application specific configs
 !/.config/fcitx5/
