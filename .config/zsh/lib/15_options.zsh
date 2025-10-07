@@ -14,3 +14,5 @@ zstyle ':completion:*' auto-description 'specify: %d'
 
 # Make the completion system more verbose and informative.
 zstyle ':completion:*' verbose yes
+
+

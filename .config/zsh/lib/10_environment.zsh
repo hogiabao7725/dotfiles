@@ -21,4 +21,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add personal scripts directory to the PATH if it exists.
 # This allows you to run your own scripts from anywhere.
-[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+if [[ -d "$HOME/.local/bin" && ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+export PATH
