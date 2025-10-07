@@ -27,6 +27,23 @@
 !/.config/wezterm/
 !/.config/wezterm/**
 
+# Starship
+!/.config/starship.toml
+
+# ==========================================================
+# KDE PLASMA CONFIGURATIONS
+# ==========================================================
+
+# Core visual and functional settings
+!/.config/kwinrc
+!/.config/kglobalshortcutsrc
+!/.config/kcminputrc
+
+# Application specific configs
+!/.config/fcitx5/
+!/.config/fcitx5/**
+!/.config/spectaclerc
+
 # ==========================================================
 # IGNORE CACHE & COMPILED FILES
 # ==========================================================

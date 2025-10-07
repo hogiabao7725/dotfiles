@@ -9,9 +9,6 @@ export LC_ALL=en_US.UTF-8
 
 # Set default text editor (uncomment your preferred one).
 export EDITOR='nvim'
-# export EDITOR='vim'
-# export EDITOR='code' # VS Code
-# export EDITOR='nano'
 export VISUAL="$EDITOR"
 
 # Use `less` as the default pager with options to support colors.
@@ -21,11 +18,10 @@ export LESS='-R'
 # Paths for version managers.
 # The actual loading logic is handled in 30_functions.zsh.
 export NVM_DIR="$HOME/.nvm"
-export SDKMAN_DIR="$HOME/.sdkman"
-
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
 
 # Add personal scripts directory to the PATH if it exists.
 # This allows you to run your own scripts from anywhere.
-# [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+if [[ -d "$HOME/.local/bin" && ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+export PATH

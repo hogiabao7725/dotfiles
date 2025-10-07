@@ -22,6 +22,7 @@ utils.merge_tables_recursive(config, keybindings)
 config.default_prog = {'/usr/bin/zsh'}
 config.initial_cols = 120
 config.initial_rows = 30
-config.window_decorations = "RESIZE"
+config.window_decorations = "NONE"
+config.audible_bell = 'Disabled'
 
 return config
