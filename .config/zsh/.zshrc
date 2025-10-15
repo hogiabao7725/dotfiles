@@ -11,6 +11,12 @@ export ZSH_PLUGINS_DIR="$HOME/.config/zsh/plugins"
 export ZSH_LIB_DIR="$HOME/.config/zsh/lib"
 
 # ------------------------------------------------------------------------------
+# Mise: manager versions
+# ------------------------------------------------------------------------------
+eval "$($(which mise) activate zsh --shims)"
+# eval "$($(which mise) activate zsh)"
+
+# ------------------------------------------------------------------------------
 # Completion: initialize early (before themes/plugins)
 # ------------------------------------------------------------------------------
 autoload -Uz compinit
