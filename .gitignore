@@ -23,6 +23,10 @@
 # as it will be managed by a script.
 /.config/zsh/plugins/
 
+# Fish shell
+!/.config/fish/
+!/.config/fish/**
+
 # WezTerm
 !/.config/wezterm/
 !/.config/wezterm/**
