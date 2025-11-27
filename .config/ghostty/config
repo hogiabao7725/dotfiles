@@ -1,0 +1,64 @@
+# Ghostty Configuration
+# Docs: https://ghostty.org/docs/config
+
+# ============================================
+# APPEARANCE
+# ============================================
+
+# Font and display
+font-size = 14
+theme = TokyoNight
+background-opacity = 0.8
+
+# Window settings
+maximize = true
+window-padding-x = 10
+window-padding-y = 10
+
+# Cursor appearance
+cursor-style = bar
+cursor-style-blink = true
+cursor-click-to-move = true
+
+# ============================================
+# SHELL
+# ============================================
+
+command = /usr/bin/fish
+
+# ============================================
+# BEHAVIOR
+# ============================================
+
+quit-after-last-window-closed = false
+
+# ============================================
+# KEYBINDINGS
+# ============================================
+
+# Config management
+keybind = ctrl+shift+,=reload_config
+
+# Tab management
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+w=close_tab
+keybind = ctrl+page_down=next_tab
+keybind = ctrl+page_up=previous_tab
+
+# Tab navigation (direct access)
+keybind = ctrl+1=goto_tab:1
+keybind = ctrl+2=goto_tab:2
+keybind = ctrl+3=goto_tab:3
+keybind = ctrl+4=goto_tab:4
+keybind = ctrl+5=goto_tab:5
+keybind = ctrl+6=goto_tab:6
+keybind = ctrl+7=goto_tab:7
+keybind = ctrl+8=goto_tab:8
+keybind = ctrl+9=goto_tab:9
+
+# Split management
+keybind = ctrl+shift+right=new_split:right
+keybind = ctrl+shift+left=new_split:left
+keybind = ctrl+shift+down=new_split:down
+keybind = ctrl+shift+up=new_split:up
+keybind = ctrl+shift+q=close_surface
