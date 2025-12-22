@@ -1,0 +1,65 @@
+# ==========================================================
+# .gitignore for Home Directory Dotfiles
+# ==========================================================
+
+# 1. Safety Net: Ignore everything by default.
+*
+
+# 2. Exceptions: Whitelist essential root files and directories.
+!/.gitignore
+!/.gitmodules
+!/.config/
+!/.dotfiles/
+
+# ==========================================================
+# TRACKED CONFIGURATIONS
+# ==========================================================
+
+# Zsh
+# Whitelist the entire zsh config directory...
+!/.config/zsh/
+!/.config/zsh/**
+/.config/zsh/plugins/
+
+# Fish shell
+!/.config/fish/
+!/.config/fish/**
+
+# WezTerm
+!/.config/wezterm/
+!/.config/wezterm/**
+
+# Ghostty
+!/.config/ghostty/
+!/.config/ghostty/**
+
+# Alacritty
+!/.config/alacritty/
+!/.config/alacritty/**
+
+# Starship
+!/.config/starship.toml
+
+# ==========================================================
+# KDE PLASMA CONFIGURATIONS
+# ==========================================================
+
+# Core visual and functional settings
+!/.config/kwinrc
+!/.config/kglobalshortcutsrc
+!/.config/kcminputrc
+
+# Application specific configs
+!/.config/fcitx5/
+!/.config/fcitx5/**
+!/.config/spectaclerc
+
+# ==========================================================
+# IGNORE CACHE & COMPILED FILES
+# ==========================================================
+
+# Ignore Zsh auto-generated files
+.zcompdump*
+
+# Ignore compiled files (.zwc)
+/.config/zsh/**/*.zwc
