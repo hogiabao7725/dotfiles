@@ -40,6 +40,14 @@
 # Starship
 !/.config/starship.toml
 
+# Mise
+!/.config/mise/
+!/.config/mise/**
+
+# Fastfetch
+!/.config/fastfetch/
+!/.config/fastfetch/**
+
 # ==========================================================
 # KDE PLASMA CONFIGURATIONS
 # ==========================================================
