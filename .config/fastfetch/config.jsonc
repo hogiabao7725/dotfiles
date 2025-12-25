@@ -4,11 +4,9 @@
     "type": "file",
     "source": "~/.config/fastfetch/my_ascii.logo.txt",
     "padding": {
-      "top": 2,
       "left": 2,
       "right": 4
     },
-    // Color mapping for variables ${1}, ${2}, etc. in the text file
     "color": {
       "1": "blue",
       "2": "cyan",
@@ -22,9 +20,8 @@
       "keys": "magenta",
       "title": "blue"
     },
-    // Ensure the key width is sufficient for the box drawing characters
     "key": {
-      "width": 16
+      "width": 14 // Reduced width for compactness
     },
     "size": {
       "binaryPrefix": "si",
@@ -32,6 +29,10 @@
     }
   },
   "modules": [
+
+    // --- Vertical Padding ---
+    { "type": "break" },
+
     // --- Header Section ---
     {
       "type": "title",
@@ -42,38 +43,7 @@
       "format": "" // Spacer
     },
 
-    // --- Hardware Section (Warm Colors: Red -> Yellow) ---
-    {
-      "type": "cpu",
-      "key": "╭─ CPU",
-      "keyColor": "red",
-      "format": "{1}" // Show distinct name only
-    },
-    {
-      "type": "gpu",
-      "key": "├─󰾲 GPU",
-      "keyColor": "yellow",
-      "format": "{2}" // Concise GPU name
-    },
-    {
-      "type": "memory",
-      "key": "├─ RAM",
-      "keyColor": "yellow",
-      "format": "{1} / {2} ({3})"
-    },
-    {
-      "type": "disk",
-      "key": "╰─ Disk",
-      "keyColor": "green",
-      "format": "{1} / {2} ({3})"
-    },
-
-    {
-      "type": "custom",
-      "format": "" // Spacer
-    },
-
-    // --- Software Section (Cool Colors: Blue -> Cyan -> Magenta) ---
+    // --- Core System (OS, Kernel, Uptime - Lightweight) ---
     {
       "type": "os",
       "key": "╭─ OS",
@@ -85,24 +55,35 @@
       "keyColor": "blue"
     },
     {
+      "type": "uptime",
+      "key": "├─󰅐 Uptime",
+      "keyColor": "blue"
+    },
+
+    // --- Environment (WM, Shell) ---
+    {
       "type": "wm",
       "key": "├─ WM",
       "keyColor": "cyan"
     },
     {
-      "type": "packages",
-      "key": "├─󰏖 Pkgs",
+      "type": "shell",
+      "key": "├─ Shell",
       "keyColor": "cyan"
     },
+
+    // --- Hardware (CPU & RAM only - Removed Disk/GPU for speed) ---
     {
-      "type": "uptime",
-      "key": "├─󰅐 Uptime",
-      "keyColor": "magenta"
+      "type": "cpu",
+      "key": "├─ CPU",
+      "keyColor": "red",
+      "format": "{1}" // Show distinct name only
     },
     {
-      "type": "shell",
-      "key": "╰─ Shell",
-      "keyColor": "magenta"
+      "type": "memory",
+      "key": "╰─ RAM",
+      "keyColor": "yellow",
+      "format": "{1} / {2}" // Removed percentage for a cleaner look
     },
 
     {
