@@ -48,6 +48,9 @@
 !/.config/fastfetch/
 !/.config/fastfetch/**
 
+# Vscode
+!/.config/Code/User/settings.json
+
 # ==========================================================
 # KDE PLASMA CONFIGURATIONS
 # ==========================================================
