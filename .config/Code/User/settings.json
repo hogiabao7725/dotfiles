@@ -1,0 +1,81 @@
+{
+    // --- Font & Typography ---
+    "window.zoomLevel": 0.3,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace",
+    "editor.fontSize": 15,
+    "editor.lineHeight": 1.6,
+    "editor.fontLigatures": true,
+    // --- Terminal ---
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.lineHeight": 1.4,
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.profiles.linux": {
+        "fish": {
+            "path": "fish",
+        },
+        "bash": {
+            "path": "bash",
+        },
+        "zsh": {
+            "path": "zsh",
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        }
+    },
+    // --- UI Layout ---
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.verticalScrollbarSize": 8,
+    "window.titleBarStyle": "custom",
+    "workbench.activityBar.location": "top",
+    "workbench.statusBar.visible": true,
+    "breadcrumbs.enabled": true,
+    "workbench.tree.indent": 18,
+    // --- Animations ---
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    // --- Code Quality ---
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    // --- Visual Guides ---
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.renderWhitespace": "selection",
+    "editor.renderLineHighlight": "gutter",
+    // --- Auto Save ---
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    // --- Editor Behavior ---
+    "editor.suggestSelection": "first",
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "editor.snippetSuggestions": "top",
+    "editor.wordWrap": "off",
+    // --- GPU & Performance ---
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true,
+        "**/.venv/**": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/venv": true,
+        "**/.git": true
+    },
+    // --- Privacy ---
+    "telemetry.telemetryLevel": "off",
+    "extensions.ignoreRecommendations": true,
+    "workbench.colorTheme": "One Dark Pro Night Flat",
+    "workbench.iconTheme": "material-icon-theme",
+}
