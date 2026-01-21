@@ -1,0 +1,104 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/my_ascii.logo.txt",
+    "padding": {
+      "left": 2,
+      "right": 4
+    },
+    "color": {
+      "1": "blue",
+      "2": "cyan",
+      "3": "magenta",
+      "4": "white"
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "magenta",
+      "title": "blue"
+    },
+    "key": {
+      "width": 14 // Reduced width for compactness
+    },
+    "size": {
+      "binaryPrefix": "si",
+      "ndigits": 0
+    }
+  },
+  "modules": [
+
+    // --- Vertical Padding ---
+    { "type": "break" },
+
+    // --- Header Section ---
+    {
+      "type": "title",
+      "format": "{#1}╭───────────── {#}{user-name-colored}{at-symbol-colored}{host-name-colored} {#1}─────────────╮"
+    },
+    {
+      "type": "custom",
+      "format": "" // Spacer
+    },
+
+    // --- Core System (OS, Kernel, Uptime - Lightweight) ---
+    {
+      "type": "os",
+      "key": "╭─ OS",
+      "keyColor": "blue"
+    },
+    {
+      "type": "kernel",
+      "key": "├─ Kernel",
+      "keyColor": "blue"
+    },
+    {
+      "type": "uptime",
+      "key": "├─󰅐 Uptime",
+      "keyColor": "blue"
+    },
+
+    // --- Environment (WM, Shell) ---
+    {
+      "type": "wm",
+      "key": "├─ WM",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "shell",
+      "key": "├─ Shell",
+      "keyColor": "cyan"
+    },
+
+    // --- Hardware (CPU & RAM only - Removed Disk/GPU for speed) ---
+    {
+      "type": "cpu",
+      "key": "├─ CPU",
+      "keyColor": "red",
+      "format": "{1}" // Show distinct name only
+    },
+    {
+      "type": "memory",
+      "key": "╰─ RAM",
+      "keyColor": "yellow",
+      "format": "{1} / {2}" // Removed percentage for a cleaner look
+    },
+
+    {
+      "type": "custom",
+      "format": "" // Spacer
+    },
+
+    // --- Footer Section ---
+    {
+      "type": "colors",
+      "paddingLeft": 2,
+      "symbol": "circle",
+      "block": {
+        "range": [1, 6]
+      }
+    }
+  ]
+}
