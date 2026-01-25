@@ -14,23 +14,27 @@ set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git --excl
 set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 set -gx FZF_ALT_C_COMMAND  'fd --type d --hidden --follow --exclude .git --exclude node_modules'
 
-# ---------- Theme: TokyoNight Storm ----------
+# ---------- Theme: Catppuccin Mocha ----------
 # Standard Palette References:
-# bg            = #24283b
-# bg_dark       = #1f2335
-# bg_highlight  = #292e42
-# fg            = #c0caf5
-# blue          = #7aa2f7
-# cyan          = #7dcfff
-# green         = #9ece6a
-# yellow        = #e0af68
+# bg            = #1e1e2e
+# bg_dark       = #181825
+# bg_highlight  = #313244
+# fg            = #cdd6f4
+# blue          = #89b4fa
+# cyan          = #89dceb
+# green         = #a6e3a1
+# yellow        = #f9e2af
+# pink          = #f5c2e7
+# mauve         = #cba6f7
+# red           = #f38ba8
+# peach         = #fab387
 
 set -l fzf_colors "\
---color=fg:#c0caf5,bg:,hl:#9ece6a \
---color=fg+:#c0caf5,bg+:#1f2335,hl+:#9ece6a:bold \
---color=info:#e0af68,prompt:#7dcfff,pointer:#7dcfff \
---color=marker:#9ece6a,spinner:#9ece6a,header:#e0af68 \
---color=gutter:#24283b,border:#7aa2f7,preview-bg:"
+--color=fg:#cdd6f4,bg:,hl:#a6e3a1 \
+--color=fg+:#cdd6f4,bg+:#313244,hl+:#a6e3a1:bold \
+--color=info:#f9e2af,prompt:#89dceb,pointer:#f5c2e7 \
+--color=marker:#a6e3a1,spinner:#a6e3a1,header:#fab387 \
+--color=gutter:#1e1e2e,border:#89b4fa,preview-bg:"
 
 set -gx FZF_DEFAULT_OPTS "\
 --style=full \
