@@ -4,8 +4,7 @@ if not status is-interactive
     exit
 end
 
-# Skip if starship is not installed
-if not command -sq fzf
+if not command -q starship
     exit
 end
 
