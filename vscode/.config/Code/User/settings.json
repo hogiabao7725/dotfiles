@@ -1,0 +1,106 @@
+{
+    // =========================================================
+    // 1. VISUAL ERGONOMICS & TYPOGRAPHY (Your preferences)
+    // =========================================================
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "editor.fontFamily": "'JetBrains Mono', 'Fira Code', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "editor.lineHeight": 1.6,
+    "editor.cursorBlinking": "phase", // Smooth fading animation
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "terminal.integrated.smoothScrolling": true,
+    // UI Cleanup
+    "editor.minimap.enabled": false, // Disable if you don't use it to save screen real estate
+    "editor.scrollbar.vertical": "visible",
+    "editor.scrollbar.horizontal": "visible",
+    "workbench.tree.indent": 16, // Better visual hierarchy in file explorer
+    "workbench.editor.enablePreview": false, // Open files in new tab immediately (no italic preview)
+    // =========================================================
+    // 2. INTELLIGENT EDITOR BEHAVIOR (The "Pro" stuff)
+    // =========================================================
+    "editor.stickyScroll.enabled": true, // Keeps class/function signature at top of screen (Like IntelliJ)
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true, // Connects matching brackets with a line
+    "editor.guides.indentation": true,
+    "editor.renderWhitespace": "boundary", // Show whitespace at start/end of lines only
+    // Inlay Hints (Parameter names inline - Heavy but useful feature)
+    "editor.inlayHints.enabled": "onUnlessPressed", // Show hints, hide when holding Ctrl/Alt
+    "editor.inlayHints.fontFamily": "'JetBrains Mono'",
+    "editor.inlayHints.fontSize": 12,
+    // Autocomplete & Formatting
+    "editor.suggestSelection": "first", // Always select top suggestion
+    "editor.acceptSuggestionOnEnter": "smart", // Only accept if it makes sense
+    "editor.snippetSuggestions": "top", // Snippets have priority
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always", // Auto remove unused imports
+        "source.fixAll": "always"
+    },
+    // =========================================================
+    // 3. SYSTEM & PERFORMANCE OPTIMIZATION
+    // =========================================================
+    "files.autoSave": "afterDelay", // Auto save after modification
+    "files.autoSaveDelay": 1000,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    // Exclude heavy folders from File Watcher (Critical for performance on large projects)
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/dist/**": true,
+        "**/.venv/**": true,
+        "**/__pycache__/**": true,
+        "**/tmp/**": true,
+        "**/build/**": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.venv": true,
+        "**/__pycache__": true,
+        "**/dist": true
+    },
+    // =========================================================
+    // 4. TERMINAL TWEAKS
+    // =========================================================
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "'JetBrains Mono', monospace",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.defaultProfile.linux": "fish", // Or zsh/fish if you use them
+    "terminal.integrated.gpuAcceleration": "on", // Force GPU usage
+    // =========================================================
+    // 5. LANGUAGE SPECIFIC OVERRIDES (Python & Go)
+    // =========================================================
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter", // Recommend using Black
+        "editor.formatOnType": true,
+        "editor.tabSize": 4
+    },
+    "[go]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+        },
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false // Go standard uses tabs
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // =========================================================
+    // 6. EXTENSIONS CONFIG
+    // =========================================================
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": true
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.iconTheme": "material-icon-theme"
+}
