@@ -18,10 +18,10 @@ set -gx FZF_ALT_C_COMMAND  'fd --type d --hidden --follow --exclude .git --exclu
 
 # --- 3. Theme (Catppuccin Mocha) ---
 set -l fzf_colors "\
---color=fg:#cdd6f4,bg:,hl:#a6e3a1 \
---color=fg+:#cdd6f4,bg+:#313244,hl+:#a6e3a1:bold \
---color=info:#f9e2af,prompt:#89dceb,pointer:#f5c2e7 \
---color=marker:#a6e3a1,spinner:#a6e3a1,header:#fab387 \
+--color=fg:#cdd6f4,bg:,hl:#cba6f7 \
+--color=fg+:#cdd6f4,bg+:#313244,hl+:#cba6f7:bold:underline \
+--color=info:#f9e2af,prompt:#89b4fa,pointer:#f38ba8 \
+--color=marker:#f38ba8,spinner:#f38ba8,header:#fab387 \
 --color=gutter:#1e1e2e,border:#89b4fa,preview-bg:"
 
 set -gx FZF_DEFAULT_OPTS "\
@@ -49,7 +49,9 @@ set -gx FZF_CTRL_R_OPTS "\
 --exact \
 --height=16 \
 --border=rounded \
---prompt='History ❯ '"
+--prompt='History ❯ ' \
+--delimiter=' │ ' \
+--with-nth=2.."
 
 # Alt+C: Directory Preview (eza)
 set -gx FZF_ALT_C_OPTS "\
