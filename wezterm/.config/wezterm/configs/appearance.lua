@@ -6,10 +6,10 @@ local M = {}
 
 -- Font settings
 M.font = wezterm.font("JetbrainsMono Nerd Font Mono", { weight = "Medium" })
-M.font_size = 13.5
+M.font_size = 13
 
 -- Color scheme
-M.color_scheme = "Tokyo Night Storm"
+M.color_scheme = "Catppuccin Mocha"
 
 -- Opacity settings
 M.text_background_opacity = 1.0

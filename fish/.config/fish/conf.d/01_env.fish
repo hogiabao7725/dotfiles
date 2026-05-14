@@ -15,3 +15,9 @@ set -gx LESS '-R'
 # Add user's local bin to PATH
 # (fish avoids duplicates by default)
 fish_add_path "$HOME/.local/bin"
+
+# Go Env
+set -gx GOPATH $HOME/go
+fish_add_path "$GOPATH/bin"
+
+fish_add_path "$HOME/.bun/bin"
