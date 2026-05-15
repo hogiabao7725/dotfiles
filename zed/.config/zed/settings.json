@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "autosave": "on_focus_change",
   "terminal": {
     "shell": {
       "program": "/usr/bin/fish",
@@ -44,7 +45,7 @@
   },
   "icon_theme": {
     "mode": "light",
-    "light": "Soft Charmed Icons",
+    "light": "Catppuccin Mocha",
     "dark": "Zed (Default)",
   },
   "agent_servers": {
@@ -57,7 +58,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha - No Italics",
   },
   "code_lens": "on",
 }
